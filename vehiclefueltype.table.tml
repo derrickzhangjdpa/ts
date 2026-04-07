@@ -34,3 +34,5 @@ table:
   properties:
     spotter_config:
       is_spotter_enabled: false
+  testing line
+    code goes here
