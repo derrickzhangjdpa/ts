@@ -8233,6 +8233,9 @@ model:
       != 'null' ) then ( to_double ( concat ( sql_string_op ( "json_value(retail_transactions_measure_group,
       '$.customer_cash_rebate.customercashrebate_weight')" ) , left ( [PIN_RETAIL_DATA_DIGEST_FINAL_V3::source]
       , 0 ) ) ) ) else 0 )
+  - id: formula_demo formula
+    name: demo formula
+    expr: '''demo formula'''
   - id: formula_last 3 year
     name: last 3 year
     expr: ( if ( ( add_years ( start_of_year ( now ( ) ) , - 2 ) > [PIN_RETAIL_DATA_DIGEST_FINAL_V3::monthind_dt]
@@ -8269,9 +8272,6 @@ model:
       != 'null' ) then ( to_double ( concat ( sql_string_op ( "json_value(pricing_metrics_measure_group,
       '$.noncoreincentive8.noncoreincentive9')" ) , left ( [PIN_RETAIL_DATA_DIGEST_FINAL_V3::source]
       , 0 ) ) ) ) else 0 )
-  - id: formula_testing formula
-    name: testing formula
-    expr: '''testing formula'''
   - id: formula_total_combo_apr_subvention
     name: total_combo_apr_subvention
     expr: sum ( if ( [PIN_RETAIL_DATA_DIGEST_FINAL_V3::pricing_metrics_measure_group]
@@ -14560,8 +14560,8 @@ model:
       index_type: DONT_INDEX
     data_panel_column_groups:
       Time: ''
-  - name: testing formula
-    formula_id: formula_testing formula
+  - name: demo formula
+    formula_id: formula_demo formula
     properties:
       column_type: ATTRIBUTE
       index_type: DONT_INDEX
